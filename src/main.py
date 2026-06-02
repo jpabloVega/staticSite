@@ -2,7 +2,7 @@ from copystatic import copy_static_into_public
 from gencontent import generate_pages_recursive
 import sys
 
-if len(sys.argv) >= 2 and sys.argv[1] == "/staticSite":
+if len(sys.argv) >= 2 and sys.argv[1] == "/staticSite/":
     base_path = sys.argv[1]
 else:
     base_path = "/"
