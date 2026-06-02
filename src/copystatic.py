@@ -4,10 +4,11 @@ from pathlib import Path
 SCR_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = SCR_DIR.removesuffix("/src")
 
-def copy_static_into_public(origin="static", target="public",first=True):
+def copy_static_into_public(origin="static", target="docs",first=True):
     if first:
-        public_dir = ROOT_DIR + "/public"
-        shutil.rmtree(public_dir)
+        public_dir = os.path.join(ROOT_DIR, target)
+        if Path(public_dir).exists():
+            shutil.rmtree(public_dir)
         os.makedirs(public_dir)
     target_dir = os.path.join(ROOT_DIR, target)
     origin_dir = os.path.join(ROOT_DIR, origin)
