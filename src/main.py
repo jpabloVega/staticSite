@@ -2,8 +2,8 @@ from copystatic import copy_static_into_public
 from gencontent import generate_pages_recursive
 import sys
 
-if sys.argv[0]:
-    base_path = sys.argv[0]
+if sys.argv[1]:
+    base_path = sys.argv[1]
 else:
     base_path = "/"
 
